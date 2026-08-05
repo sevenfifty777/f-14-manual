@@ -188,6 +188,7 @@
   - [Instant Camera](./dcs/polaroid_camera.md)
   - [Jester Set Commands (F-14A/B)](./dcs/jester_set_commands_ab.md)
   - [Jester Set Commands (F-14B(U))](./dcs/jester_set_commands_bu.md)
+  - [Jester v2 Radio & Data Link Menu Structure](./dcs/jester_v2_menu.md)
   - [Bombing Tool](./dcs/bombing_tool.md)
   - [Kneeboard](./dcs/kneeboard.md)
   - [Embedded Manual](./dcs/ingame_manual.md)
