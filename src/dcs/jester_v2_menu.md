@@ -1,4 +1,4 @@
-# Jester v2 Radio & Data Link Menu Structure
+# Jester v2 Wheel Menu Structure
 
 Based on your screenshots, here is the exact mapping to navigate the new F-14 Jester v2 Radio and Datalink menus. You can use these paths to build your new VoiceAttack macro chains.
 
