@@ -33,3 +33,17 @@ jobs:
           generateReleaseNotes: true
           omitBody: true
           omitName: true
+
+      - name: Discord Notification
+        if: success()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          if [ -n "$DISCORD_WEBHOOK" ]; then
+            curl -H "Content-Type: application/json" \
+                 -X POST \
+                 -d '{"content": "📄 **New PDF Release!** A new version of the F-14 Manual PDF is now available for download: https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}"}' \
+                 $DISCORD_WEBHOOK
+          else
+            echo "Discord Webhook secret is not set. Skipping notification."
+          fi
