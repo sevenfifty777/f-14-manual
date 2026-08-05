@@ -30,3 +30,17 @@ jobs:
           publish_dir: ./book/html
           publish_branch: html
           cname: f-14-manual.ttsandbox.click
+
+      - name: Discord Notification
+        if: success()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          if [ -n "$DISCORD_WEBHOOK" ]; then
+            curl -H "Content-Type: application/json" \
+                 -X POST \
+                 -d '{"content": "🚀 **New Update!** The F-14 Manual has just been successfully built and deployed! Check it out here: https://f-14-manual.ttsandbox.click"}' \
+                 $DISCORD_WEBHOOK
+          else
+            echo "Discord Webhook secret is not set. Skipping notification."
+          fi
